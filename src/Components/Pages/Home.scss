@@ -1,0 +1,25 @@
+.bodySection {
+  max-width: 1000px;
+  margin: auto;
+  padding: 3rem 1rem;
+
+  h1 {
+    text-align: left;
+    font-size: 3rem;
+  }
+
+  select {
+    padding: 0.25rem;
+    font-size: 1.5rem;
+    border-radius: 1rem;
+  }
+
+  .packageCards {
+    margin: 1rem 0rem;
+    display: flex;
+    overflow-x: scroll;
+    padding: 0.25rem 0.25rem;
+    padding-bottom: 1rem;
+    gap: 1rem;
+  }
+}

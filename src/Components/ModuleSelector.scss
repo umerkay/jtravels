@@ -1,0 +1,25 @@
+.module-icon {
+  display: flex;
+  flex-direction: column;
+  color: grey;
+
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  transition-duration: 100ms;
+  width: 60px;
+  height: 40px;
+  cursor: pointer;
+
+  &.selected {
+    color: purple;
+    .icon {
+      font-size: 1.5rem;
+    }
+    font-size: 0.9rem;
+  }
+  .icon {
+    font-size: 1rem;
+  }
+  font-size: 0.75rem;
+}
