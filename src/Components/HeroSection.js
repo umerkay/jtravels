@@ -3,6 +3,7 @@ import "../App.css";
 import "./HeroSection.scss";
 import ModuleSelector from "./ModuleSelector";
 import { modules } from "../staticData";
+import { Link } from "react-router-dom";
 
 function HeroSection() {
   const [module, setModule] = useState(modules[0]);
@@ -20,7 +21,6 @@ function HeroSection() {
             ></ModuleSelector>
           </div>
           <div class="module-search">{module.heroView}</div>
-          <button class="btn primary">SEARCH</button>
         </div>
       </div>
     </div>

@@ -79,9 +79,13 @@
   to {width: 100%;}
 }
 
+.primaryText {
+  color: rgb(0,46,70);
+  
+}
 
 .btn.primary {
-  background-color: purple;
+  background-color: rgb(0,46,70);
   padding: 0.25rem 3rem;
   font-size: 1.5rem;
   border-radius: 100rem;

@@ -7,10 +7,11 @@ import { fakeFetch } from "../../fakeFetch";
 import PackageCard from "../PackageCard";
 import "./Home.scss";
 import SelectSearch from "react-select-search";
+import HolPackages from "../HolPackages";
 
 function Home() {
   const [packages, setPackages] = useState([null, null, null]);
-  const [filter, setFilter] = useState(null);
+  const [category, setCategory] = useState(null);
   useEffect(() => {
     fakeFetch`/api/packages`.then((res) => setPackages(res.data));
   }, []);
@@ -22,25 +23,14 @@ function Home() {
       <div class="bodySection">
         <div class="flexbox">
           <h1 style={{ flexGrow: 5 }}>Popular Destinations</h1>
-          {/* <select
-            name="filter"
-            id=""
-            onChange={(e) =>
-              setFilter(e.target.value === "all" ? null : e.target.value)
-            }
-          >
-            <option value="all">All</option>
-            <option value="domestic">Domestic</option>
-            <option value="international">International</option>
-          </select> */}
           <div style={{ flexGrow: 1, minWidth: 200, fontSize: "1.5rem" }}>
             <SelectSearch
-              options={["domestic", "international"].map((i) => ({
+              options={["domestic", "international", "all"].map((i) => ({
                 value: i,
                 name: i.charAt(0).toUpperCase() + i.slice(1),
               }))}
-              onChange={(v) => setFilter(v)}
-              multiple
+              value={"all"}
+              onChange={(v) => setCategory(v)}
               printOptions="on-focus"
               placeholder="Filter"
             ></SelectSearch>
@@ -48,26 +38,14 @@ function Home() {
         </div>
 
         <div class="packageCards">
-          {packages
-            .filter((p) => !filter || shouldShow(p, filter))
-            .map((holPackage, n) => (
-              <PackageCard
-                key={holPackage?.destination.city || n}
-                holPackage={holPackage}
-              ></PackageCard>
-            ))}
+          <HolPackages
+            packages={packages}
+            filters={[{ key: "categories", value: category }]}
+          ></HolPackages>
         </div>
         <div class="spacer"></div>
         <h1>Special Offers</h1>
-
-        <div class="packageCards">
-          {packages.map((holPackage, n) => (
-            <PackageCard
-              key={holPackage?.destination.city || n}
-              holPackage={holPackage}
-            ></PackageCard>
-          ))}
-        </div>
+        <HolPackages packages={packages}></HolPackages>
       </div>
 
       <Footer />

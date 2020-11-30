@@ -15,6 +15,7 @@ const data = {
       rating: 4,
       img: fakeImg,
       categories: ["international", "holiday"],
+      id: "11",
     },
     {
       destination: {
@@ -26,6 +27,7 @@ const data = {
       rating: 5,
       img: fakeImg,
       categories: ["international", "holiday"],
+      id: "12",
     },
     {
       destination: {
@@ -37,10 +39,11 @@ const data = {
       rating: 2,
       img: fakeImg,
       categories: ["domestic", "holiday"],
+      id: "13",
     },
     {
       destination: {
-        city: "Kalam",
+        city: "Islamabad",
         country: "Pakistan",
       },
       description:
@@ -48,13 +51,26 @@ const data = {
       rating: 2,
       img: fakeImg,
       categories: ["domestic", "holiday"],
+      id: "14",
+    },
+    {
+      destination: {
+        city: "Islamabad",
+        country: "Pakistan",
+      },
+      description:
+        "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae reiciendis obcaecati nobis.",
+      rating: 2,
+      img: fakeImg,
+      categories: ["domestic", "holiday"],
+      id: "15",
     },
   ],
 };
 
 const routes = {
   "/api/packages": (...params) => data.packages,
-  "/api/packages/:var": (id) => data.packages[id],
+  "/api/packages/:var": (id) => data.packages.find((pkg) => pkg.id === id),
   "/api/hotels": (...params) => data.hotels,
   "/api/hotels/:var": (id) => data.hotels[id],
 };
