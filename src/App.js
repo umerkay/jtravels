@@ -1,27 +1,29 @@
-import React from "react";
+import React, { useContext } from "react";
 import Navbar from "./Components/Navbar";
 import "./App.css";
-import Home from "./Components/Pages/Home";
+import Home from "./Components/Pages/Home/Home";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Services from "./Components/Pages/Services";
-import Products from "./Components/Pages/Products";
-import SignUp from "./Components/Pages/SignUp";
 import "./Components/SelectSearch.scss";
 import PackageView from "./Components/Pages/PackageView";
 import SearchView from "./Components/Pages/SearchView";
+import { StateStore } from "./Store";
+import { setTestValue } from "./Actions/test";
 
 function App() {
+  const {
+    state: { test },
+    dispatch,
+  } = useContext(StateStore);
   return (
     <>
       <Router>
-        {/* <Navbar /> */}
+        <Navbar />
+        {/* {test}
+        <button onClick={() => setTestValue(dispatch, test + 1)}>+</button> */}
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/s/:module" exact component={SearchView} />
           <Route path="/packages/:id" exact component={PackageView} />
-          <Route path="/services" component={Services} />
-          <Route path="/products" component={Products} />
-          <Route path="/sign-up" component={SignUp} />
         </Switch>
       </Router>
     </>

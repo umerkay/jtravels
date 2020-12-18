@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
-import { modules } from "../staticData";
+import { modules } from "../../staticData";
 import "./ModuleSelector.scss";
 
 export default function ModuleSelector({ module, setModule }) {

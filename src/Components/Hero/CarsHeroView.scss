@@ -1,11 +1,13 @@
-#holidaysHeroView {
-  display: flex;
+#carsHeroView {
+  display: grid;
   // gap: 1rem;
-  // grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
   width: 100%;
   margin-left: 2rem;
   margin-right: 2rem;
+  padding-top: 27px;
+
   .from,
   .destination {
     width: 100%;
@@ -18,5 +20,19 @@
       background-color: rgb(233, 233, 233) !important;
       border: none;
     }
+    .inputDate {
+      margin: 5px 0px;
+      height: 40px;
+      .react-date-picker__wrapper {
+        border: 0px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 960px) {
+  #carsHeroView {
+    // flex-direction: column;
+    grid-template-columns: 1fr;
   }
 }

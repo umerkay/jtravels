@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { fakeFetch } from "../../fakeFetch";
-import HeroMini from "../HeroMini";
+import HeroMini from "../Hero/HeroMini";
 
 export default function PackageView(props) {
   let id = props.match.params.id;

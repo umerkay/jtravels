@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ModuleSelector from "./ModuleSelector";
 import "./HeroSection.scss";
-import { modules } from "../staticData";
+import { modules } from "../../staticData";
 
 export default function HeroMini() {
   const [module, setModule] = useState(

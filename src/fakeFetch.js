@@ -1,9 +1,19 @@
+import fakeImg2 from "./images/img-6.jpg";
 import fakeImg from "./images/img-2.jpg";
 
 const fakeSleep = (m) => new Promise((r) => setTimeout(r, m));
 
 const data = {
   hotels: [{ name: "Al Fatah" }, { name: "Al Dishah" }, { name: "Al Makkah" }],
+  tours: Array(9).fill({
+    destination: {
+      city: "Dubai",
+      country: "United Arab Emirates",
+    },
+    totalCount: 26,
+    minimumCost: 20000,
+    img: fakeImg,
+  }),
   packages: [
     {
       destination: {
@@ -66,6 +76,30 @@ const data = {
       id: "15",
     },
   ],
+  discCards: Array(9).fill({
+    img: fakeImg2,
+    category: "HoneyMoon",
+    discount: "Upto 50% Off",
+    oldprice: 30000,
+    newprice: 15000,
+  }),
+  CARS: {
+    popular: ["JTTYT01", "JTTYT02", "JTVIG01", "JTVIG02"],
+    categories: [
+      {
+        src: "images/cars/sedan",
+        title: "Sedan",
+      },
+      {
+        src: "images/cars/pickup",
+        title: "Pickup",
+      },
+      {
+        src: "images/cars/sports",
+        title: "Sports",
+      },
+    ],
+  },
 };
 
 const routes = {
@@ -73,6 +107,8 @@ const routes = {
   "/api/packages/:var": (id) => data.packages.find((pkg) => pkg.id === id),
   "/api/hotels": (...params) => data.hotels,
   "/api/hotels/:var": (id) => data.hotels[id],
+  "/api/tours": () => data.tours,
+  "/api/disccards": () => data.discCards,
 };
 
 export async function fakeFetch(strings, ...params) {

@@ -3,7 +3,7 @@ import PackageCard from "./PackageCard";
 
 export default function HolPackages({ packages, filters }) {
   return (
-    <div class="packageCards">
+    <>
       {packages
         .filter((p) => !p || !filters || shouldShow(p, filters))
         .map((holPackage, n) => (
@@ -12,7 +12,7 @@ export default function HolPackages({ packages, filters }) {
             holPackage={holPackage}
           ></PackageCard>
         ))}
-    </div>
+    </>
   );
 }
 

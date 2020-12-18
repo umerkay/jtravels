@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import "../App.css";
+import "../../App.css";
 import "./HeroSection.scss";
 import ModuleSelector from "./ModuleSelector";
-import { modules } from "../staticData";
+import { modules } from "../../staticData";
 import { Link } from "react-router-dom";
 
 function HeroSection() {

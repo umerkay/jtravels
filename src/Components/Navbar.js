@@ -37,7 +37,7 @@ function Navbar() {
           <div className="menu-icon" onClick={handleClick}>
             <FontAwesomeIcon icon={click ? faTimes : faBars} />
           </div>
-          {/* <ul className={click ? "nav-menu active" : "nav-menu"}>
+          <ul className={click ? "nav-menu active" : "nav-menu"}>
             <li className="nav-item">
               <Link to="/" className="nav-links" onClick={closeMobileMenu}>
                 Home
@@ -63,16 +63,16 @@ function Navbar() {
             </li>
 
             <li>
-              <Link
+              {/* <Link
                 to="/sign-up"
                 className="nav-links-mobile"
                 onClick={closeMobileMenu}
               >
                 Sign Up
-              </Link>
+              </Link> */}
             </li>
-          </ul> */}
-          {button && <Button buttonStyle="btn--outline">SIGN UP</Button>}
+          </ul>
+          {/* {button && <Button buttonStyle="btn--outline">SIGN UP</Button>} */}
         </div>
       </nav>
     </>

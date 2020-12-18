@@ -55,17 +55,22 @@
   height: 2rem;
 }
 
+* {
+  transition-duration: 200ms;
+}
+
 .placeholder-text {
   /* min-width: 100px; */
   width: 100px;
   display: block;
-  background-color: grey;
+  background-color: rgba(0, 0,0,0.3);
   opacity: 0.25;
+  padding: 0.5em;
   animation: loading-text;
   animation-duration: 1.5s;
   animation-iteration-count: infinite;
   animation-timing-function: ease-out;
-  min-height: 1rem;
+  min-height: 1em;
 }
 
 .flexbox {
@@ -77,6 +82,16 @@
 @keyframes loading-text {
   from {width: 0%;}
   to {width: 100%;}
+}
+
+.btn {
+  align-self: center;
+  text-decoration: none;
+  color: white;
+  background-color: purple;
+  border-radius: 100rem;
+  cursor: pointer;
+  
 }
 
 .primaryText {

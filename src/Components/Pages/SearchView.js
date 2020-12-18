@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { addUrlProps, UrlQueryParamTypes } from "react-url-query";
 import { fakeFetch } from "../../fakeFetch";
 import { modules } from "../../staticData";
-import HeroMini from "../HeroMini";
+import HeroMini from "../Hero/HeroMini";
 import HolPackages from "../HolPackages";
 
 const urlPropsQueryConfig = {
